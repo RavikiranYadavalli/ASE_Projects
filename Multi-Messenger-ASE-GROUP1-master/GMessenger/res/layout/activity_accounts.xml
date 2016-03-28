@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.gmessenger.Accounts" >
+
+    <ImageButton
+        android:id="@+id/yahoo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/fbmessenger"
+        android:layout_alignLeft="@+id/imageButton4"
+        android:src="@drawable/yim" />
+
+    <ImageButton
+        android:id="@+id/fbmessenger"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/messenger" />
+
+    <ImageButton
+        android:id="@+id/messages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/yahoo"
+        android:layout_alignLeft="@+id/yahoo"
+        android:layout_alignTop="@+id/gtalk"
+        android:src="@drawable/messages" />
+
+    <ImageButton
+        android:id="@+id/gtalk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/yahoo"
+        android:layout_toRightOf="@+id/yahoo"
+        android:src="@drawable/gtalk" />
+
+</RelativeLayout>

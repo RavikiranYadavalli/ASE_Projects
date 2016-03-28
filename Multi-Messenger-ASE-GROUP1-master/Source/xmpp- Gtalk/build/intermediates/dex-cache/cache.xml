@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\DELL\.gradle\caches\modules-2\files-2.1\org.igniterealtime.smack\smack\3.2.1\31d71e906ab5e36347bf05b9f828312648e66a9f\smack-3.2.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="31d71e906ab5e36347bf05b9f828312648e66a9f">
+        <dex dex="C:\Users\DELL\Desktop\ASE\xmpp\app\build\intermediates\pre-dexed\debug\smack-3.2.1-7d5548368d25cf2d854d47adacdef569598fc20f.jar" />
+    </item>
+
+</items>

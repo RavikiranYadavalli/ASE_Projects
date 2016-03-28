@@ -1,0 +1,67 @@
+
+  <div class="bar bar-header">
+    <h1 class="title">Rohith Reddy</h1>
+    <button class="button icon ion-ios-telephone"></button>
+    <button class="button icon ion-gear-b"></button>
+    <button class="button icon ion-paperclip"></button>
+
+
+    <button class="button">Edit</button>
+
+
+
+
+
+  </div>
+
+  <div class="bar bar-subheader item-input-inset">
+    <label class="item-input-wrapper">
+      <i class="icon ion-ios-search placeholder-icon"></i>
+      <input type="search" placeholder="Search">
+    </label>
+    <button class="button button-clear">
+      Cancel
+    </button>
+  </div>
+
+  <ion-content has-bouncing="true" class="has-header has-footer"
+               delegate-handle="userMessageScroll">
+
+<br><br><br>
+
+        <div class="chat-bubble left">
+          <div class="message">Hello how do you do ? </div>
+        </div><br><br><br><br>
+
+        <div class="chat-bubble right">
+          <div class="message">I am Fine bro ! Watsup! ?</div>
+        </div><br><br><br><br>
+
+        <div class="chat-bubble left">
+           <div class="message">Happy Diwali :) </div>
+        </div><br><br><br><br>
+
+    <div class="chat-bubble right">
+      <div class="message">U too man ! How are the celebrations?</div>
+    </div><br><br><br><br>
+
+    <div class="chat-bubble left">
+      <div class="message">yeah they are nice</div>
+    </div><br><br><br><br>
+
+
+
+
+
+  </ion-content>
+
+
+
+  <ion-footer-bar keyboard-attach class="bar-stable item-input-inset">
+    <label class="item-input-wrapper">
+      <input type="text" placeholder="Type your message" on-return="sendMessage(); closeKeyboard()" ng-model="data.message" on-focus="inputUp()" on-blur="inputDown()" />
+    </label>
+    <button class="button button-positive" ng-click="sendMessage()">
+      Send
+    </button>
+  </ion-footer-bar>

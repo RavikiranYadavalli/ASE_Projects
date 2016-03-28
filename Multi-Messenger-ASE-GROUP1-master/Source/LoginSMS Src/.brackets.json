@@ -1,0 +1,10 @@
+{
+    "jscodehints.detectedExclusions": [
+        "C:/Users/anusha/Documents/ASE/ase-lab1-master/source/LAB-7/platforms/android/assets/www/lib/ionic/js/ionic.js",
+        "C:/Users/anusha/Documents/ASE/ase-lab1-master/source/LAB-7/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/angular-ui/angular-ui-router.min.js",
+        "C:/Users/anusha/Documents/ASE/ase-lab1-master/source/LAB-7/gulpfile.js",
+        "C:/Users/anusha/Documents/ASE/ase-lab1-master/source/LAB-7/www/lib/ionic/js/ionic.min.js",
+        "C:/Users/anusha/Documents/ASE/ase-lab1-master/source/LAB-7/www/js/controllers.js",
+        "C:/Users/anusha/Documents/ASE/ase-lab1-master/source/LAB-7/www/js/app.js"
+    ]
+}

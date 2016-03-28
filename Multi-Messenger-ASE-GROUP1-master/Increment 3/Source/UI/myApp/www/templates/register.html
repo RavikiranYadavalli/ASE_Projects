@@ -1,0 +1,33 @@
+<ion-view view-title="Sign UP">
+ <ion-pane>
+<ion-header-bar>
+  <button class="button button-icon icon ion-arrow-left-c" ng-click="home()"></button>
+  <h1 class="title">Sign UP</h1>
+  <button class="button button-icon icon ion-power" ng-click="logout()">Logout</button>
+</div>
+</ion-header-bar>
+
+       
+  <ion-content padding="true">
+    
+        <div class="list">
+  <label class="item item-input">
+    <input type="text" id="firstName" class="form-control" placeholder="Enter firstName" required autofocus ng-model="firstName">
+  </label>
+  <label class="item item-input">
+ <input type="text" id="lastName" class="form-control" placeholder="Enter lastName" required autofocus ng-model="lastName">
+  </label>
+<label class="item item-input">
+ <input type="text" id="emailphn" class="form-control" placeholder="EmailId/PhoneNumber" required autofocus ng-model="emailphn">
+  </label>
+  <label class="item item-input">
+ <input type="password" id="password" class="form-control" placeholder="Enter Password" required autofocus ng-model="password">
+  </label>
+  
+        <button class="button button-block button-calm padding-horizontal"  ng-click="register(username,password,email)">Register</button>
+</div>  
+
+  </ion-content>
+            </ion-pane>
+</ion-view>
+
