@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" data-ng-app="myApp">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>User Home Page</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js" type="application/javascript"></script>  
+  <script src="js/app.js"></script>
+    <script src="js/factory.js"></script>
+    <script src="js/singleton.js"></script>
+    <script src="js/mixin.js"></script>
+
+    <style>
+.button {
+        border: 1px solid #7d868c;
+        background: #161717;
+        background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#161717));
+        background: -webkit-linear-gradient(top, #ffffff, #161717);
+        background: -moz-linear-gradient(top, #ffffff, #161717);
+        background: -ms-linear-gradient(top, #ffffff, #161717);
+        background: -o-linear-gradient(top, #ffffff, #161717);
+        background-image: -ms-linear-gradient(top, #ffffff 0%, #161717 100%);
+        padding: 14px 28px;
+        -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+        border-radius: 7px;
+        -webkit-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+        -moz-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+        box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+        text-shadow: #0d0d0d 0 1px 0;
+        color: #ededed;
+        font-size: 16px;
+        font-family: helvetica, serif;
+        text-decoration: none;
+        vertical-align: middle;
+		position:absolute;
+		top:150px;
+		left:10px;
+      }
+      .button:hover {
+        border: 1px solid #0a3c59;
+        text-shadow: #1e4158 0 1px 0;
+        background: #3e779d;
+        background: -webkit-gradient(linear, left top, left bottom, from(#f2faff), to(#3e779d));
+        background: -webkit-linear-gradient(top, #f2faff, #3e779d);
+        background: -moz-linear-gradient(top, #f2faff, #3e779d);
+        background: -ms-linear-gradient(top, #f2faff, #3e779d);
+        background: -o-linear-gradient(top, #f2faff, #3e779d);
+        background-image: -ms-linear-gradient(top, #f2faff 0%, #3e779d 100%);
+        color: #fff;
+      }
+      .button:active {
+        text-shadow: #1e4158 0 1px 0;
+        border: 1px solid #0a3c59;
+        background: #65a9d7;
+        background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#3e779d));
+        background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+        background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+        background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+        background: -o-linear-gradient(top, #3e779d, #65a9d7);
+        background-image: -ms-linear-gradient(top, #3e779d 0%, #65a9d7 100%);
+        color: #fff;
+      }
+	  
+	
+	
+</style>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body style="background-image:url(images/images2.jpg) " ng-controller="RegisterController">
+<center><b><h1>Welcome <label id="label"></h1></b></center>
+<div style="position: absolute;left: 1280px; top: 550px;"> Created &nbsp &nbsp &nbsp &nbsp by &nbsp &nbsp &nbsp &nbsp &nbsp<label id="label1"></div>
+<div style="position: absolute;left: 1280px; top: 30px;"><label id="label2"></div>
+
+
+<div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+  <button type="button" class="btn btn-default" ng-click="updateuser()">Update User</button><br>
+  <button type="button" class="btn btn-default" ng-click="deleteuser()">Delete User</button><br>
+  <button type="button" class="btn btn-default" ng-click="api_views()">API views</button><br>
+  <button type="button" class="btn btn-default">Help</button><br>
+   <button type="button" class="btn btn-default" onclick="window.location.href='main1.html'">Back</button>
+<br>
+</div>
+    <div style="position:absolute;top:120px;left:370px" ng-hide="visibile">
+<iframe height="550px" src="{{srcc}}" width="850px" scrolling="yes">
+</iframe></div>
+<script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
+<script src="js/bootstrap.js" type="text/javascript"></script>
+</body>
+</html>
+    <script>
+        var storageFactory = new StorageFactory();
+        var localstorage = storageFactory.createStorage({});
+    //var name =localStorage.getItem("username");
+  document.getElementById('label').innerHTML=" "+localstorage.username;
+        document.getElementById('label1').innerHTML=" "+localstorage.username;
+        var project = Project.getInstance();
+        //console.log(project.Purpose());
+        document.getElementById('label2').innerHTML=" "+project.Purpose();
+    </script>

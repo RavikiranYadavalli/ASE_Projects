@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="" data-ng-app="geolocation">
+<head>
+  <meta t="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mash up Page</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js" type="application/javascript"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script> 
+    <style>
+	html { 
+  background: url(background.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+    #map-canvas {
+    width: 400px;
+    height: 300px;
+}
+.input{
+position: absolute;
+left:850px;
+top:200px;
+
+}
+.geo{
+position: absolute;
+left:50px;
+top:110px;
+
+}
+.chart{
+position:absolute;
+left:500px;
+top:220px;
+
+}
+
+.text1
+{
+color: rgb(0, 89, 0);
+font-size: 25px;
+background-color: rgb(255, 252, 168);
+text-shadow: rgb(255, 252, 168) 2px 2px 0px, rgb(156, 156, 156) 1px 1px 0px;
+}
+
+    </style>
+</head>
+
+<body style="background-image:url("images/1.jpeg")">
+<center><b><h1>Welcome <label id="label"></h1></b></center>
+<div class="geo" ng-controller="googlemapoutput">
+            <p class="text1" align="center"> <b>Current Location</b></p><br/>
+            <div id="map-canvas"></div>
+        </div>
+		<div>
+			
+		<div>
+
+		<div class="input">
+		<table>
+			<tr>
+				<th><label>Pizza Items</label></th>
+				<th><labelss>Quantity</label></th>
+			</tr>
+			<tr>
+				<th><input type="text"  ng-model="name" id="type" placeholder="Enter name"/></th>
+				<th><input type="text"  ng-model="value" id="type" placeholder="Enter value"/></th>
+			</tr>
+			<tr>
+				<th><input type="text"  ng-model="name1" id="type" placeholder="Enter name"/></th>
+				<th><input type="text"  ng-model="value1" id="type" placeholder="Enter value"/></th>
+			</tr>
+			<tr>
+				<th><input type="text"  ng-model="name2" id="type" placeholder="Enter name"/></th>
+				<th><input type="text"  ng-model="value2" id="type" placeholder="Enter value"/></th>
+			</tr>
+			<tr>
+				<th><input type="text"  ng-model="name3" id="type" placeholder="Enter name"/></th>
+				<th><input type="text"  ng-model="value3" id="type" placeholder="Enter value"/></th>
+			</tr>
+		</table>
+		<!-- <input type="text"  ng-model="type" id="type" placeholder="Enter type"/><br><br>
+		<input type="text"  ng-model="price" id="type1" placeholder="Enter type1"/><br><br>
+		<input type="text"  ng-model="type1" id="type1" placeholder="Enter type1"/><br><br>
+		<input type="text"  ng-model="price1" id="type1" placeholder="Enter type1"/><br><br> -->
+		<!-- <img src="https://chart.googleapis.com/chart?chs=250x100&chd=t:60,40&cht=p3&chl=Hello|World" height="100" width="500"> -->
+		
+
+		</div>
+		<div class="chart">
+		<img src="https://chart.googleapis.com/chart?chs=400x150&chd=t:{{value}},{{value1}},{{value2}},{{value3}}&cht=v&chdl={{name}}|{{name1}}|{{name2}}|{{name3}}&chco=0000FF&chtt=Venn+Diagram&chts=FF0000,30,c&chdls=FF0000,20" height="300" width="300">
+		</div>
+		
+
+
+    </body>
+</html>
+
+
+<script>
+ var username= localStorage.getItem("username");
+      
+	   document.getElementById('label').innerHTML=" "+username;
+				
+
+var app= angular.module('geolocation', [])
+app.controller('googlemapoutput', function ($scope) {
+	
+	var name =localStorage.getItem("username");
+  document.getElementById('label').innerHTML=" "+name;
+    var map;
+    var mapOptions;
+
+    $scope.initialize = function () {
+        navigator.geolocation.getCurrentPosition(function (position) {
+
+            var pos = new google.maps.LatLng(
+            position.coords.latitude,
+            position.coords.longitude);
+
+            var mapOptions = {
+                zoom: 16,
+                center: pos
+            };
+
+            map = new google.maps.Map(document.getElementById('map-canvas'),
+            mapOptions);
+
+            var marker = new google.maps.Marker({
+                position: pos,
+                map: map
+            });
+        });
+    };
+
+    google.maps.event.addDomListener(window, 'load', $scope.initialize);
+
+});
+</script>

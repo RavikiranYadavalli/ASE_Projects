@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html ng-app="myApp">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js" type="application/javascript"></script>  
+  <script src="js/app.js"></script>
+	<script src="js/factory.js"></script>
+	<script src="js/singleton.js"></script>
+	<script src="js/mixin.js"></script>
+<!--<script>
+
+function LoginController($scope){
+$scope.login=function(user,pwd)
+{
+	localStorage.setItem("username",user);
+};
+
+}
+
+</script>-->
+<title>User main Page</title>
+<style>
+.myButton {
+	-moz-box-shadow:inset 0px 0px 0px 0px #9fb4f2;
+	-webkit-box-shadow:inset 0px 0px 0px 0px #9fb4f2;
+	box-shadow:inset 0px 0px 0px 0px #9fb4f2;
+	background-color:#7892c2;
+	-moz-border-radius:12px;
+	-webkit-border-radius:12px;
+	border-radius:12px;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:6px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+}
+.myButton:hover {
+	background-color:#476e9e;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+.loginbtn
+{
+	position:absolute;
+	top:350px;
+	left:570px;
+}
+.registerbtn
+{
+	position:absolute;
+	top:400px;
+	left:560px;
+}
+.heading{
+
+margin: 1em 0 0.5em 0;
+	color:blue;
+	font-weight: normal;
+	font-family: 'Ultra', sans-serif;   
+	font-size: 36px;
+	line-height: 42px;
+	text-shadow: 0 2px white, 0 3px #777;
+	position:absolute;
+	left:500px;
+
+}
+.heading1{
+
+margin: 1em 0 0.5em 0;
+	color:#00000;
+	font-weight: normal;
+	font-family: 'Ultra', sans-serif;   
+	font-size: 25px;
+	line-height: 42px;
+	
+	
+	position:absolute;
+	left:530px;}
+
+html { 
+  background: url(images/images2.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+        </style>
+
+
+</head>
+<div style="position: absolute;left: 1280px; top: 30px;"><label id="label2"></div>
+
+<body ng-controller="RegisterController">
+
+<div class="heading">
+<h2>Chat Application</h2></div>
+
+<div class="loginbtn">
+<!-- <a href="home.html" class="myButton">Login</a> -->
+<input type="submit" ng-click="login(username,password)" value="Login" class="myButton"></input>
+    
+</div>
+
+<div class="registerbtn">
+<a href="register.html" class="myButton" >Register</a>
+</div>
+<form>
+<div style="position:absolute;top:260px;left:560px;">
+<input type="text" placeholder="User Name" ng-model="username" id="user"><br>
+<input type="password" placeholder="Password"
+ style="position:absolute;top:30px;" ng-model="password">
+</div>
+
+<center>
+<div style="position:absolute;left:550px;top:450px;color:brown" ng-hide="checked">
+    {{msg}} 
+</div>
+
+    </center>
+
+</body>
+
+</html>
+<script>
+
+	var project = Project.getInstance();
+	//console.log(project.Purpose());
+	document.getElementById('label2').innerHTML=" "+project.Purpose();
+</script>
